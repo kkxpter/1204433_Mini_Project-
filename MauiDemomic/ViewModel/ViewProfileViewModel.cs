@@ -12,6 +12,10 @@ public partial class ViewProfileViewModel : ObservableObject
     [ObservableProperty]
     string email = "johndoe@example.com";
 
+    // เพิ่ม PhoneNumber
+    [ObservableProperty]
+    string phoneNumber = "0829265047";
+
     [RelayCommand]
     async Task EditProfile()
     {
