@@ -1,0 +1,50 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiDemomic.ViewModel"
+             x:Class="MauiDemomic.Pages.RegistrationInfoPage"
+             Shell.NavBarIsVisible="False"
+             Title="ข้อมูลลงทะเบียนเรียน">
+    <Grid Padding="20">
+        <Image Source="bg6.jpg"
+               Aspect="AspectFill"
+               Opacity="0.8"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"/>
+        <VerticalStackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+            <!-- ข้อมูลการลงทะเบียน -->
+            <Frame Padding="20"
+                   CornerRadius="20"
+                   BackgroundColor="Black"
+                   Opacity="0.85"
+                   HorizontalOptions="Center"
+                   WidthRequest="350">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="ชื่อวิชา"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           FontSize="16"/>
+                    <Label Text="{Binding CourseName}"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           FontSize="18"
+                           FontAttributes="Bold"/>
+                    <Label Text="เทอมที่ลงทะเบียน"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           FontSize="16"/>
+                    <Label Text="{Binding Semester}"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           FontSize="18"
+                           FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="รายละเอียดการลงทะเบียน"
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   FontSize="16" 
+                   Margin="10,20,10,10"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

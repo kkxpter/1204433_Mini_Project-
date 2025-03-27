@@ -5,7 +5,7 @@
              x:Class="MauiDemomic.Pages.ViewMain"
              Shell.NavBarIsVisible="False"
 >
-<ContentPage.BindingContext>
+    <ContentPage.BindingContext>
         <viewmodel:ViewMainViewModel />
     </ContentPage.BindingContext>
     <Grid>
@@ -35,29 +35,30 @@
 
                 <!-- ปุ่มข้อมูลลงทะเบียนเรียน -->
                 <Button Text="ข้อมูลลงทะเบียนเรียน"
-                        BackgroundColor="#FFEC2121"
-                        TextColor="White"
-                        CornerRadius="20"
-                        HeightRequest="60"
-                        FontSize="16"
-                        Margin="0,15"
-                        FontAttributes="Bold"
-                        Padding="20"
-                        HorizontalOptions="FillAndExpand" 
-                        Command="{Binding GoToRegistrationInfoCommand}" />
+                    BackgroundColor="#FFEC2121"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="60"
+                    FontSize="16"
+                    Margin="0,15"
+                    FontAttributes="Bold"
+                    Padding="20"
+                    HorizontalOptions="FillAndExpand" 
+                    Command="{Binding GoToRegistrationInfoPageCommand}" />
 
                 <!-- ปุ่มลงทะเบียน -->
                 <Button Text="ลงทะเบียน"
-                        BackgroundColor="#FFEC2121"
-                        TextColor="White"
-                        CornerRadius="20"
-                        HeightRequest="60"
-                        FontSize="16"
-                        Margin="0,15"
-                        Padding="20"
-                        FontAttributes="Bold"
-                        HorizontalOptions="FillAndExpand"
-                        Command="{Binding GoToRegistrationCommand}" />
+                    BackgroundColor="#FFEC2121"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="60"
+                    FontSize="16"
+                    Margin="0,15"
+                    Padding="20"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Command="{Binding GoToRegistrationPageCommand}" />
+
             </VerticalStackLayout>
         </Grid>
 

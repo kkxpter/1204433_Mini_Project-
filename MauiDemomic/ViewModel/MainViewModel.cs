@@ -12,20 +12,26 @@ namespace MauiDemomic.ViewModel
         [RelayCommand]
         async Task GoToProfile()
         {
-            System.Diagnostics.Debug.Print("profile");
             await Shell.Current.GoToAsync(nameof(ViewProfile));
         }
 
         [RelayCommand]
-        async Task GoToRegistrationInfo()
+        async Task GoToRegistrationPage()
         {
-            //await Shell.Current.GoToAsync(nameof(RegistrationInfoPage));
+            await Shell.Current.GoToAsync(nameof(RegistrationPage));
         }
 
         [RelayCommand]
-        async Task GoToRegistration()
-        {
-            //await Shell.Current.GoToAsync(nameof(RegistrationPage));
+        public async Task GoToRegistrationInfoPage()
+{
+    // สมมติว่าเรามีข้อมูลจากการลงทะเบียนแล้ว
+    string selectedCourseCode = "CS101 - Introduction to Computer Science";
+    string selectedSemester = "Term 1";
+
+    // ไปยังหน้า RegistrationInfoPage พร้อมข้อมูล
+    string route = $"RegistrationInfoPage?courseName={selectedCourseCode}&semester={selectedSemester}";
+    await Shell.Current.GoToAsync(route);
         }
+
     }
 }

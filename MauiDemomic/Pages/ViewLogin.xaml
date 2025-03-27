@@ -68,13 +68,12 @@
                            TextColor="White"/>
 
                     <Entry Placeholder="Enter your email"
-                           HorizontalTextAlignment="Start"
-                           Text="{Binding Username}"
-                           TextColor="Black"
-                           BackgroundColor="White"
-                           
-                           HeightRequest="45"
-                           Margin="0,5"/>
+                            HorizontalTextAlignment="Start"
+                            Text="{Binding Email}"
+                            TextColor="Black"
+                            BackgroundColor="White"
+                            HeightRequest="45"
+                            Margin="0,5"/>
 
                     <Label Text="Password"
                            FontSize="14"

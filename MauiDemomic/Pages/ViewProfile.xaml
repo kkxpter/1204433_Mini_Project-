@@ -23,7 +23,12 @@
             <VerticalStackLayout Spacing="25" VerticalOptions="Center" HorizontalOptions="Center">
 
                 <!-- ข้อความ "ข้อมูลส่วนตัว" ด้านบนกรอบ -->
-                
+                <Label Text="ข้อมูลส่วนตัว"
+                       FontSize="30"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       Margin="0,10" />
 
                 <!-- กรอบรวมสำหรับข้อมูล -->
                 <Frame BorderColor="White"
@@ -36,15 +41,9 @@
                        WidthRequest="350"
                        Opacity="0.85">
                     <VerticalStackLayout Spacing="15">
-                     <Label Text="ข้อมูลส่วนตัว"
-                       FontSize="30"
-                       FontAttributes="Bold"
-                       TextColor="White"
-                       HorizontalOptions="Center"
-                       Margin="0,10" />
                         <Image Source="anime.jpg"
-                               WidthRequest="80"
-                               HeightRequest="80"
+                               WidthRequest="60"
+                               HeightRequest="60"
                                Aspect="AspectFill"
                                HorizontalOptions="Center"
                                VerticalOptions="Center"/>
@@ -111,7 +110,7 @@
                         BackgroundColor="#FFEC2121"
                         TextColor="White"
                         CornerRadius="20"
-                        HeightRequest="20"
+                        HeightRequest="50"
                         FontSize="16"
                         Padding="10"
                         FontAttributes="Bold"

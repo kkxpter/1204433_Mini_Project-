@@ -13,8 +13,8 @@ public partial class AppShell : Shell
 		Routing.RegisterRoute("viewpage", typeof(ViewPage));
 		Routing.RegisterRoute(nameof(ViewMain), typeof(ViewMain));
 		Routing.RegisterRoute(nameof(ViewProfile), typeof(ViewProfile));
-		
-		
+		Routing.RegisterRoute(nameof(RegistrationPage), typeof(RegistrationPage));
+		Routing.RegisterRoute(nameof(RegistrationInfoPage), typeof(RegistrationInfoPage));
 	}
 	
 }

@@ -19,6 +19,16 @@ public partial class ViewProfileViewModel : ObservableObject
     [RelayCommand]
     async Task EditProfile()
     {
-        await Shell.Current.DisplayAlert("แก้ไขโปรไฟล์", "ฟีเจอร์นี้ยังไม่พร้อมใช้งาน", "ตกลง");
+        // ตรวจสอบว่าผู้ใช้กรอกข้อมูลทั้งหมดแล้วหรือยัง
+        if (string.IsNullOrEmpty(FullName) || string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(PhoneNumber))
+        {
+            await Shell.Current.DisplayAlert("ผิดพลาด", "กรุณากรอกข้อมูลให้ครบถ้วน", "ตกลง");
+            return;
+        }
+
+        // หากข้อมูลครบถ้วนให้แสดงข้อความว่าอัปเดตสำเร็จ
+        await Shell.Current.DisplayAlert("สำเร็จ", "โปรไฟล์ของคุณถูกอัปเดตแล้ว", "ตกลง");
+        
+        // ในกรณีจริง คุณสามารถทำการบันทึกข้อมูลที่แก้ไขที่นี่ (เช่น บันทึกลงในฐานข้อมูลหรือ API)
     }
 }

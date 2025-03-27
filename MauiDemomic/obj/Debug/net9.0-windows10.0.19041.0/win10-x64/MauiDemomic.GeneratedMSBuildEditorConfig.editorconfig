@@ -63,6 +63,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = MauiDemomic.Pages.Homepage
 build_metadata.AdditionalFiles.TargetPath = Pages\Homepage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\Homepage.xaml
 
+[C:/Users/zzzco/OneDrive/เดสก์ท็อป/MauiDemomic/MauiDemomic/Pages/RegistrationInfoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiDemomic.Pages.RegistrationInfoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\RegistrationInfoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\RegistrationInfoPage.xaml
+
+[C:/Users/zzzco/OneDrive/เดสก์ท็อป/MauiDemomic/MauiDemomic/Pages/RegistrationPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiDemomic.Pages.RegistrationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\RegistrationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\RegistrationPage.xaml
+
 [C:/Users/zzzco/OneDrive/เดสก์ท็อป/MauiDemomic/MauiDemomic/Pages/ShowDataPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MauiDemomic.Pages.ShowDataPage.xaml
