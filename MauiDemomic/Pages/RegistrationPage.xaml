@@ -11,96 +11,121 @@
         <viewmodel:RegistrationViewModel />
     </ContentPage.BindingContext>
 
-    <Grid Padding="20">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        
         <!-- ภาพพื้นหลัง -->
         <Image Source="bg6.jpg"
                Aspect="AspectFill"
                Opacity="0.8"
-               HorizontalOptions="Fill"
-               VerticalOptions="Fill"/>
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
+        
+        <!-- เนื้อหาภายในหน้าจอ -->
+        <Grid Padding="20" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+            <VerticalStackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
 
-        <VerticalStackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
-
-            <!-- ช่องค้นหาวิชา -->
-            <StackLayout Orientation="Horizontal" Spacing="10">
-                <Label Text="ค้นหาวิชา"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Start"
-                       TextColor="White"
-                       WidthRequest="80"/>
-                <Entry Placeholder="พิมพ์รหัสวิชาหรือชื่อวิชา"
-                       Text="{Binding SearchQuery}"
-                       TextColor="Black"
-                       BackgroundColor="White"
-                       HeightRequest="45"/>
-            </StackLayout>
-
-            <!-- แสดงรายการรหัสวิชาหลังจากค้นหา -->
-            <Frame Padding="10"
-                   CornerRadius="10"
-                   BackgroundColor="Black"
-                   Opacity="0.85"
-                   HorizontalOptions="Center"
-                   WidthRequest="350">
-                <VerticalStackLayout Spacing="10">
-                    <Label Text="เลือกวิชาที่ต้องการลงทะเบียน"
+                <!-- ช่องค้นหาวิชา -->
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                    <Label Text="ค้นหาวิชา"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"
                            TextColor="White"
-                           FontSize="16"
-                           HorizontalOptions="Center"/>
+                           WidthRequest="80"/>
+                    <Entry Placeholder="พิมพ์รหัสวิชาหรือชื่อวิชา"
+                         Text="{Binding SearchQuery}" 
+                         TextColor="Black"
+                         BackgroundColor="White"
+                         HeightRequest="45"
+                         WidthRequest="300"
+                         HorizontalOptions="Center"
+                         TextChanged="OnSearchTextChanged" />
+                    
+                    <!-- ปุ่มค้นหา -->
+                    <Button Text="ค้นหา"
+                            BackgroundColor="#4CAF50"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="45"
+                            FontSize="14"
+                            Padding="10"
+                            FontAttributes="Bold"
+                            HorizontalOptions="End"
+                            Command="{Binding SearchCommand}" />
+                </StackLayout>
 
-                    <Picker ItemsSource="{Binding FilteredCourseCodes}"
-                            SelectedItem="{Binding SelectedCourseCode}"
+                <!-- แสดงรายการวิชาหลังจากกรอง -->
+                <Frame Padding="10"
+                       CornerRadius="10"
+                       BackgroundColor="Black"
+                       Opacity="0.85"
+                       HorizontalOptions="Center"
+                       WidthRequest="350">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="เลือกวิชาที่ต้องการลงทะเบียน"
+                               TextColor="White"
+                               FontSize="16"
+                               HorizontalOptions="Center"/>
+
+                        <!-- รายการวิชาที่กรองแล้ว -->
+                        <Picker ItemsSource="{Binding FilteredCourseCodes}" 
+                                SelectedItem="{Binding SelectedCourseCode}"
+                                BackgroundColor="White"
+                                TextColor="Black"
+                                HeightRequest="45" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- เลือกเทอม -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Semester"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"
+                           TextColor="White"
+                           WidthRequest="80"/>
+                    <Picker ItemsSource="{Binding Semesters}"
+                            SelectedItem="{Binding SelectedSemester}"
                             BackgroundColor="White"
                             TextColor="Black"
                             HeightRequest="45"/>
-                </VerticalStackLayout>
-            </Frame>
+                </StackLayout>
 
-            <!-- เลือกเทอม -->
-            <StackLayout Orientation="Horizontal" Spacing="10">
-                <Label Text="Semester"
+                <!-- ปุ่มลงทะเบียนเรียน -->
+                <Button Text="ลงทะเบียนเรียน"
+                        BackgroundColor="#FFEC2121"
+                        TextColor="White"
+                        CornerRadius="20"
+                        HeightRequest="60"
+                        FontSize="16"
+                        Padding="20"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        WidthRequest="200"
+                        Command="{Binding RegisterCommand}" />  <!-- เชื่อมโยงกับ RegisterCommand -->
+
+                <!-- ปุ่มดูข้อมูลลงทะเบียน -->
+                <Button Text="ดูข้อมูลลงทะเบียน"
+        BackgroundColor="#4CAF50"
+        TextColor="White"
+        CornerRadius="20"
+        HeightRequest="60"
+        FontSize="16"
+        Padding="20"
+        FontAttributes="Bold"
+        HorizontalOptions="Center"
+        WidthRequest="200"
+        Clicked="OnViewRegistrationInfoClicked" />   <!-- คำสั่งดูข้อมูลการลงทะเบียน -->
+
+                <!-- แสดงข้อความการลงทะเบียน -->
+                <Label Text="{Binding RegistrationDetails}"
+                       HorizontalOptions="Center"
                        VerticalOptions="Center"
-                       HorizontalOptions="Start"
                        TextColor="White"
-                       WidthRequest="80"/>
-                <Picker ItemsSource="{Binding Semesters}"
-                        SelectedItem="{Binding SelectedSemester}"
-                        BackgroundColor="White"
-                        TextColor="Black"
-                        HeightRequest="45"/>
-            </StackLayout>
+                       FontSize="16" 
+                       Margin="10,20,10,10"/>
+            </VerticalStackLayout>
+        </Grid>
 
-            <!-- ปุ่มลงทะเบียนเรียน -->
-            <Button Text="ลงทะเบียนเรียน"
-                    BackgroundColor="#FFEC2121"
-                    TextColor="White"
-                    CornerRadius="20"
-                    HeightRequest="50"
-                    FontSize="16"
-                    Padding="20"
-                    FontAttributes="Bold"
-                    HorizontalOptions="FillAndExpand"
-                    Command="{Binding RegisterCommand}" />
-
-            <!-- ปุ่มดูข้อมูลลงทะเบียน -->
-            <Button Text="ดูข้อมูลลงทะเบียน"
-                    BackgroundColor="#4CAF50"
-                    TextColor="White"
-                    CornerRadius="20"
-                    HeightRequest="50"
-                    FontSize="16"
-                    Padding="20"
-                    FontAttributes="Bold"
-                    HorizontalOptions="FillAndExpand"
-                    Command="{Binding GoToRegistrationInfoCommand}" />
-
-            <!-- แสดงข้อความการลงทะเบียน -->
-            <Label Text="{Binding RegistrationDetails}"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   TextColor="White"
-                   FontSize="16" 
-                   Margin="10,20,10,10"/>
-        </VerticalStackLayout>
-    </Grid>
+    </AbsoluteLayout>
 </ContentPage>

@@ -4,47 +4,96 @@
              x:Class="MauiDemomic.Pages.RegistrationInfoPage"
              Shell.NavBarIsVisible="False"
              Title="ข้อมูลลงทะเบียนเรียน">
-    <Grid Padding="20">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        
         <Image Source="bg6.jpg"
                Aspect="AspectFill"
-               Opacity="0.8"
-               HorizontalOptions="Fill"
-               VerticalOptions="Fill"/>
-        <VerticalStackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
-            <!-- ข้อมูลการลงทะเบียน -->
-            <Frame Padding="20"
-                   CornerRadius="20"
-                   BackgroundColor="Black"
-                   Opacity="0.85"
-                   HorizontalOptions="Center"
-                   WidthRequest="350">
-                <VerticalStackLayout Spacing="15">
-                    <Label Text="ชื่อวิชา"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           FontSize="16"/>
-                    <Label Text="{Binding CourseName}"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           FontSize="18"
-                           FontAttributes="Bold"/>
-                    <Label Text="เทอมที่ลงทะเบียน"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           FontSize="16"/>
-                    <Label Text="{Binding Semester}"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           FontSize="18"
-                           FontAttributes="Bold"/>
-                </VerticalStackLayout>
-            </Frame>
+               Opacity="0.75"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0,0,1,1" />
 
-            <Label Text="รายละเอียดการลงทะเบียน"
-                   HorizontalOptions="Center"
-                   TextColor="White"
-                   FontSize="16" 
-                   Margin="10,20,10,10"/>
-        </VerticalStackLayout>
-    </Grid>
+        <Grid Padding="15"
+              AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+              HorizontalOptions="Center"
+              VerticalOptions="CenterAndExpand">
+
+            <VerticalStackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+                <!-- กรอบข้อมูล -->
+                <Frame Padding="15"
+                       CornerRadius="20"
+                       BackgroundColor="#333"
+                       Opacity="0.90"
+                       HasShadow="True"
+                       HorizontalOptions="Center"
+                       WidthRequest="450"
+                       HeightRequest="180">
+                    <Grid ColumnSpacing="15" RowSpacing="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- ชื่อวิชา -->
+                        <Label Text="ชื่อวิชา"
+                               TextColor="White"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               Grid.Column="0"
+                               Grid.Row="0" />
+
+                        <Label Text="{Binding CourseName}"
+                               TextColor="White"
+                               FontSize="16"
+                               Grid.Column="0"
+                               Grid.Row="1" />
+
+                        <!-- เทอมที่ลงทะเบียน -->
+                        <Label Text="เทอม"
+                               TextColor="White"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               Grid.Column="1"
+                               Grid.Row="0" />
+
+                        <Label Text="{Binding Semester}"
+                               TextColor="White"
+                               FontSize="16"
+                               Grid.Column="1"
+                               Grid.Row="1" />
+
+                        <!-- ปุ่มถอนวิชา (ขนาดเล็กลง) -->
+                        <Button Text="❌ ถอน"
+                                BackgroundColor="Red"
+                                TextColor="White"
+                                FontSize="12"
+                                CornerRadius="10"
+                                Padding="4"
+                                WidthRequest="80"
+                                Command="{Binding DropCourseCommand}"
+                                HorizontalOptions="End"
+                                Grid.Column="2"
+                                Grid.Row="1"/>
+                    </Grid>
+                </Frame>
+
+                <Label Text="รายละเอียดการลงทะเบียน"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       Margin="8,8,8,8"/>
+            </VerticalStackLayout>
+        </Grid>
+
+    </AbsoluteLayout>
 </ContentPage>

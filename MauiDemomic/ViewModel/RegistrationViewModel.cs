@@ -1,7 +1,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiDemomic.Pages;
-using Microsoft.Maui.Controls;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MauiDemomic.ViewModel
@@ -18,45 +19,63 @@ namespace MauiDemomic.ViewModel
             "CS105 - Database Systems"
         };
 
+        // รายการเทอมที่สามารถเลือกได้
         public List<string> Semesters { get; } = new List<string>
         {
-            "Term 1",
-            "Term 2",
-            "Term 3"
+            "1",
+            "2",
+            "3"
         };
 
+        // ตัวแปรเก็บรหัสวิชาที่เลือก
         [ObservableProperty]
-        string selectedCourseCode;
+        private string selectedCourseCode;
 
+        // ตัวแปรเก็บเทอมที่เลือก
         [ObservableProperty]
-        string selectedSemester;
+        private string selectedSemester;
 
+        // ตัวแปรเก็บข้อความที่จะแสดงเมื่อมีการลงทะเบียน
         [ObservableProperty]
-        string registrationDetails;
+        private string registrationDetails;
 
+        // ตัวแปรสำหรับคำค้นหา
         [ObservableProperty]
-        string searchQuery;
+        private string searchQuery;
 
-        public List<string> FilteredCourseCodes { get; private set; }
+        // ตัวแปรสำหรับ FilteredCourseCodes
+        private List<string> _filteredCourseCodes;
+
+        // รายการรหัสวิชาที่จะแสดงหลังจากค้นหา
+        public List<string> FilteredCourseCodes
+        {
+            get => _filteredCourseCodes;
+            set
+            {
+                if (_filteredCourseCodes != value)
+                {
+                    _filteredCourseCodes = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
 
         public RegistrationViewModel()
         {
+            // เริ่มต้นด้วยรายการทั้งหมด
             FilteredCourseCodes = AllCourseCodes;
         }
 
+        // เมื่อมีการเปลี่ยนแปลงคำค้นหา
         partial void OnSearchQueryChanged(string value)
         {
-            if (string.IsNullOrEmpty(value))
-            {
-                FilteredCourseCodes = AllCourseCodes;
-            }
-            else
-            {
-                FilteredCourseCodes = AllCourseCodes.Where(course => course.ToLower().Contains(value.ToLower())).ToList();
-            }
+            // กรองรายวิชาตามคำค้นหาจาก SearchQuery
+            FilteredCourseCodes = AllCourseCodes
+                .Where(course => course.ToLower().Contains(value.ToLower()))
+                .ToList();
         }
 
-        // คำสั่งลงทะเบียน
+        // คำสั่งการลงทะเบียน
         [RelayCommand]
         public void Register()
         {
@@ -66,19 +85,17 @@ namespace MauiDemomic.ViewModel
             }
             else
             {
+                // แสดงข้อมูลการลงทะเบียน
                 RegistrationDetails = $"ลงทะเบียนเสร็จสิ้น!\nคุณได้ลงทะเบียนในวิชา {SelectedCourseCode} สำหรับ {SelectedSemester}";
             }
         }
 
-        // คำสั่งสำหรับไปหน้า RegistrationInfoPage
+        // คำสั่งไปยังหน้าข้อมูลการลงทะเบียน
         [RelayCommand]
         public async Task GoToRegistrationInfoPage()
         {
-            var courseName = SelectedCourseCode;
-            var semester = SelectedSemester;
-
-            // ไปยังหน้า RegistrationInfoPage และส่งข้อมูล courseName, semester
-            await Shell.Current.GoToAsync($"{nameof(RegistrationPage)}?courseName={courseName}&semester={semester}");
+            // ไปยังหน้า RegistrationInfoPage พร้อมข้อมูล
+            await Shell.Current.GoToAsync($"{nameof(RegistrationInfoPage)}?courseName={SelectedCourseCode}&semester={SelectedSemester}");
         }
     }
 }
