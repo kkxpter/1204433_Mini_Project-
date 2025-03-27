@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiDemomic.Pages.ViewLogin"
+             xmlns:viewmodel="clr-namespace:MauiDemomic.ViewModel"
+             x:DataType="viewmodel:LoginViewModel"
+             Shell.NavBarIsVisible="False"
+             Title="ViewLogin">
+
+    <Grid>
+        <!-- ภาพพื้นหลัง -->
+        <Image Source="bg6.jpg"
+               Aspect="AspectFill"
+               Opacity="0.8"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"/>
+
+        <!-- กำหนดโครงสร้าง Grid -->
+        <Grid ColumnDefinitions="2*,3*" Padding="20" VerticalOptions="Center">
+            <!-- ชื่อมหาวิทยาลัยด้านซ้าย -->
+            <VerticalStackLayout Grid.Column="0"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Center"
+                                 Margin="20,0,0,0">
+                <Label Text="Nyxen Noctis"
+                       FontSize="60"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       Margin="5,0,0,-10"/>
+
+                <Label Text="University"
+                       FontSize="35"
+                       FontAttributes="Bold"
+                       TextColor="#FFEC2121"
+                       HorizontalTextAlignment="Start"
+                       TextDecorations="Underline"
+                       Margin="5,0,0,30"/>
+
+                <Label Text="Are you ready to step into the future and embrace the unknown? Apply now and become a part of Nyxen Noctis University, where brilliance shines in the darkness!"
+                       FontSize="12"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       LineHeight="1.5"
+                       Margin="5,0,0,0"/>
+            </VerticalStackLayout>
+
+            <!-- กล่องล็อกอินด้านขวา -->
+            <Frame Padding="20"
+                   CornerRadius="20"
+                   BackgroundColor="Black"
+                   Opacity="0.85"
+                   HorizontalOptions="Center"
+                   WidthRequest="320"
+                   HeightRequest="500"
+                   Grid.Column="1">
+                <VerticalStackLayout Spacing="15">
+                    <Image Source="anime2.jpg"
+                           WidthRequest="120"
+                           HeightRequest="120"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+
+                    <Label Text="Email"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
+
+                    <Entry Placeholder="Enter your email"
+                           HorizontalTextAlignment="Start"
+                           Text="{Binding Username}"
+                           TextColor="Black"
+                           BackgroundColor="White"
+                           
+                           HeightRequest="45"
+                           Margin="0,5"/>
+
+                    <Label Text="Password"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Start"
+                           TextColor="White"/>
+
+                    <Entry Placeholder="Enter your password"
+                           IsPassword="True"
+                           HorizontalTextAlignment="Start"
+                           Text="{Binding Password}"
+                           TextColor="Black"
+                           BackgroundColor="White"
+                           
+                           HeightRequest="45"
+                           Margin="0,5"/>
+
+                    <Button Text="Login"
+                            BackgroundColor="#FFEC2121"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            Command="{Binding LoginCommand}"
+                            Margin="0,15"/>
+
+                    <HorizontalStackLayout HorizontalOptions="Center"
+                                           Spacing="50">
+                        <Label Text="Register"
+                               TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToPageCommand}" CommandParameter="register"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="Forget Password?"
+                               FontSize="13"
+                               TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToPageCommand}" CommandParameter="forgetpassword"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

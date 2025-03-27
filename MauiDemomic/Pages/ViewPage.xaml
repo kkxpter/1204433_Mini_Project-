@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiDemomic.Pages.ViewPage"
+             Title="ViewPage">
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center">
+            <Label
+                Text="Hello World!!!"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                TextColor="Red"
+                FontSize="20"
+                FontAttributes="Bold"/>
+            <Border WidthRequest="300"
+                    StrokeShape="RoundRectangle 40,40,40,40"
+                    Padding="0,20,0,20">
+                <Image Source="Maui_Disney.png"
+                       Aspect="Center"></Image>
+            </Border>
+            <Button Text="Click Me!"
+                    Clicked="Button_Clicked"
+                    WidthRequest="300"
+                    BackgroundColor="#FF006876">
+
+            </Button>
+            <ImageButton Source="apple.png"
+                         WidthRequest="50"></ImageButton>
+            <Button Text="Click Me!"
+                    WidthRequest="200"
+                    BackgroundColor="PowderBlue"
+                    Clicked="Button_Clicked"
+                    ImageSource="apple.png"
+                    ContentLayout="Left,10"
+                    HeightRequest="30"
+                    Padding="5">
+            </Button>
+            <Entry  FontSize="16"
+                    WidthRequest="250"
+                    HorizontalTextAlignment="Center"></Entry>
+            <Entry  FontSize="16"
+                    IsPassword="True"
+                    WidthRequest="250"
+                    HorizontalTextAlignment="Center"></Entry>
+            <Border HeightRequest="500"
+                    WidthRequest="250">
+                <Editor></Editor>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
