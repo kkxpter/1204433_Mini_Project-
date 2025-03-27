@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiDemomic.ViewModel"
              x:Class="MauiDemomic.Pages.ViewMain"
              Shell.NavBarIsVisible="False"
 >
+<ContentPage.BindingContext>
+        <viewmodel:ViewMainViewModel />
+    </ContentPage.BindingContext>
     <Grid>
         <!-- ภาพพื้นหลัง -->
         <Image Source="bg6.jpg"
@@ -18,16 +22,16 @@
                 
                 <!-- ปุ่มหน้า Profile -->
                 <Button Text="โปรไฟล์"
-                        BackgroundColor="#FFEC2121"
-                        TextColor="White"
-                        CornerRadius="20"
-                        HeightRequest="60"
-                        FontSize="16"
-                        Margin="0,15"
-                        Padding="20"
-                        FontAttributes="Bold"
-                        HorizontalOptions="FillAndExpand" 
-                        Command="{Binding GoToProfileCommand}" />
+                    BackgroundColor="#FFEC2121"
+                    TextColor="White"
+                    CornerRadius="20"
+                    HeightRequest="60"
+                    FontSize="16"
+                    Margin="0,15"
+                    Padding="20"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand" 
+                    Command="{Binding GoToProfileCommand}" />
 
                 <!-- ปุ่มข้อมูลลงทะเบียนเรียน -->
                 <Button Text="ข้อมูลลงทะเบียนเรียน"
