@@ -22,34 +22,95 @@
         <Grid Padding="20">
             <VerticalStackLayout Spacing="25" VerticalOptions="Center" HorizontalOptions="Center">
 
-                <!-- รูปโปรไฟล์ -->
-                <Image Source="user_avatar.png"
-                       WidthRequest="120"
-                       HeightRequest="120"
-                       Aspect="AspectFill"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       Margin="0,10"/>
-
-                <!-- ชื่อผู้ใช้ -->
-                <Label Text="{Binding FullName}"
-                       FontSize="24"
+                <!-- ข้อความ "ข้อมูลส่วนตัว" ด้านบนกรอบ -->
+                <Label Text="ข้อมูลส่วนตัว"
+                       FontSize="30"
                        FontAttributes="Bold"
                        TextColor="White"
-                       HorizontalOptions="Center"/>
+                       HorizontalOptions="Center"
+                       Margin="0,10" />
 
-                <!-- อีเมล -->
-                <Label Text="{Binding Email}"
-                       FontSize="16"
-                       TextColor="White"
-                       HorizontalOptions="Center"/>
+                <!-- กรอบรวมสำหรับข้อมูล -->
+                <Frame BorderColor="White"
+                       CornerRadius="10"
+                       Padding="20"
+                       BackgroundColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       Margin="0,10,0,20"
+                       WidthRequest="350"
+                       Opacity="0.85">
+                    <VerticalStackLayout Spacing="15">
+                        <Image Source="anime.jpg"
+                               WidthRequest="80"
+                               HeightRequest="80"
+                               Aspect="AspectFill"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+
+                        <!-- ช่องกรอกชื่อ -->
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="Name"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Start"
+                                   TextColor="White"
+                                   WidthRequest="80"/>
+                            <Frame BorderColor="Gray"
+                                   BackgroundColor="White"
+                                   Padding="10"
+                                   CornerRadius="5"
+                                   HorizontalOptions="FillAndExpand">
+                                <Entry Text="{Binding FullName}" 
+                                       Placeholder="กรุณากรอกชื่อ"
+                                       TextColor="Black"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- ช่องกรอกอีเมล -->
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="Email"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Start"
+                                   TextColor="White"
+                                   WidthRequest="80"/>
+                            <Frame BorderColor="Gray"
+                                   BackgroundColor="White"
+                                   Padding="10"
+                                   CornerRadius="5"
+                                   HorizontalOptions="FillAndExpand">
+                                <Entry Text="{Binding Email}" 
+                                       Placeholder="กรุณากรอกอีเมล"
+                                       TextColor="Black"/>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- ช่องกรอกเบอร์โทร -->
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Label Text="Phone"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Start"
+                                   TextColor="White"
+                                   WidthRequest="80"/>
+                            <Frame BorderColor="Gray"
+                                   BackgroundColor="White"
+                                   Padding="10"
+                                   CornerRadius="5"
+                                   HorizontalOptions="FillAndExpand">
+                                <Entry Text="{Binding PhoneNumber}" 
+                                       Placeholder="กรุณากรอกเบอร์โทร"
+                                       TextColor="Black"/>
+                            </Frame>
+                        </StackLayout>
+
+                    </VerticalStackLayout>
+                </Frame>
 
                 <!-- ปุ่มแก้ไขโปรไฟล์ -->
                 <Button Text="แก้ไขโปรไฟล์"
                         BackgroundColor="#FFEC2121"
                         TextColor="White"
                         CornerRadius="20"
-                        HeightRequest="50"
+                        HeightRequest="20"
                         FontSize="16"
                         Padding="10"
                         FontAttributes="Bold"
