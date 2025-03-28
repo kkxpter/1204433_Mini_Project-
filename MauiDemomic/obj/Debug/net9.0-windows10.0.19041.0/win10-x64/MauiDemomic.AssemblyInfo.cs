@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MauiDemomic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+770038a7c0f75a34d9ee342f5b0bb82ad8bccca3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e3038005086084af5fc4bff8008d8d077f3b4713")]
 [assembly: System.Reflection.AssemblyProductAttribute("MauiDemomic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MauiDemomic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
