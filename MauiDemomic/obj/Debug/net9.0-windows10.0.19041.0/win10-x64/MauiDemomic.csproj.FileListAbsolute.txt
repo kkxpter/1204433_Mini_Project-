@@ -483,7 +483,6 @@ D:\Maui\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\N
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xbf
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\AboutAssets.txt
-C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\user.json
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\splashSplashScreen.scale-100.png
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\splashSplashScreen.scale-125.png
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\splashSplashScreen.scale-150.png
@@ -981,3 +980,6 @@ C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\obj\
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiDemomic.sourcelink.json
+C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\global.json
+C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\user_data.json
+C:\Users\zzzco\OneDrive\เดสก์ท็อป\MauiDemomic\MauiDemomic\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\users.json

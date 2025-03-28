@@ -12,11 +12,41 @@ namespace MauiDemomic.ViewModel
         // รายการรหัสวิชาทั้งหมด
         public List<string> AllCourseCodes { get; } = new List<string>
         {
+            // รายวิชาสาขาวิทยาการคอมพิวเตอร์
             "CS101 - Introduction to Computer Science",
             "CS102 - Data Structures",
             "CS103 - Algorithms",
             "CS104 - Web Development",
-            "CS105 - Database Systems"
+            "CS105 - Database Systems",
+            "CS106 - Operating Systems",
+            "CS107 - Computer Networks",
+            "CS108 - Software Engineering",
+            "CS109 - Artificial Intelligence",
+            "CS110 - Machine Learning",
+            // รายวิชาสาขาวิทยาศาสตร์ข้อมูล
+            "DS101 - Introduction to Data Science",
+            "DS102 - Data Analysis with Python",
+            "DS103 - Big Data Technologies",
+            "DS104 - Data Visualization",
+            "DS105 - Statistical Methods",
+            // รายวิชาสาขาวิศวกรรมไฟฟ้า
+            "EE101 - Electrical Circuits",
+            "EE102 - Digital Electronics",
+            "EE103 - Microprocessors",
+            "EE104 - Electrical Machines",
+            "EE105 - Power Systems",
+            // รายวิชาสาขาบริหารธุรกิจ
+            "BA101 - Introduction to Business",
+            "BA102 - Marketing Principles",
+            "BA103 - Financial Accounting",
+            "BA104 - Organizational Behavior",
+            "BA105 - Strategic Management",
+            // รายวิชาสาขาวิศวกรรมเครื่องกล
+            "ME101 - Mechanics of Materials",
+            "ME102 - Thermodynamics",
+            "ME103 - Fluid Mechanics",
+            "ME104 - Heat Transfer",
+            "ME105 - Manufacturing Processes"
         };
 
         // รายการเทอมที่สามารถเลือกได้

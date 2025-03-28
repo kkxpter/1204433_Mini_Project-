@@ -28,7 +28,7 @@ namespace MauiDemomic.Pages
 
             if (string.IsNullOrEmpty(Semester))
             {
-                Semester = "1";  // เทอมตัวอย่าง
+                Semester = "Term 1";  // เทอมตัวอย่าง
             }
 
             // ตั้งค่า BindingContext ให้เชื่อมโยงกับ ViewModel

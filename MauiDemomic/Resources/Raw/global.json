@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "1234",
+      "name": "John Doe",
+      "phone": "081-234-5678",
+      "registeredCourses": [
+        {"courseName": "CS101", "semester": "1"},
+        {"courseName": "CS102", "semester": "2"}
+      ]
+    },
+    {
+      "email": "admin@example.com",
+      "password": "admin123",
+      "name": "Admin",
+      "phone": "099-888-7777",
+      "registeredCourses": []
+    }
+  ]
+}

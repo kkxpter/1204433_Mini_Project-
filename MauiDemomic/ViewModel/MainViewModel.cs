@@ -26,7 +26,7 @@ namespace MauiDemomic.ViewModel
 {
     // สมมติว่าเรามีข้อมูลจากการลงทะเบียนแล้ว
     string selectedCourseCode = "CS101 - Introduction to Computer Science";
-    string selectedSemester = "Term 1";
+    string selectedSemester = "1";
 
     // ไปยังหน้า RegistrationInfoPage พร้อมข้อมูล
     string route = $"RegistrationInfoPage?courseName={selectedCourseCode}&semester={selectedSemester}";

@@ -23,15 +23,15 @@
 
             <VerticalStackLayout Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
                 <!-- กรอบข้อมูล -->
-                <Frame Padding="15"
+                <Frame Padding="20"
                        CornerRadius="20"
                        BackgroundColor="#333"
                        Opacity="0.90"
                        HasShadow="True"
                        HorizontalOptions="Center"
-                       WidthRequest="450"
-                       HeightRequest="180">
-                    <Grid ColumnSpacing="15" RowSpacing="8">
+                       WidthRequest="500"
+                       HeightRequest="200">
+                    <Grid ColumnSpacing="20" RowSpacing="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -46,39 +46,39 @@
                         <!-- ชื่อวิชา -->
                         <Label Text="ชื่อวิชา"
                                TextColor="White"
-                               FontSize="14"
+                               FontSize="16"
                                FontAttributes="Bold"
                                Grid.Column="0"
                                Grid.Row="0" />
 
                         <Label Text="{Binding CourseName}"
                                TextColor="White"
-                               FontSize="16"
+                               FontSize="18"
                                Grid.Column="0"
                                Grid.Row="1" />
 
                         <!-- เทอมที่ลงทะเบียน -->
                         <Label Text="เทอม"
                                TextColor="White"
-                               FontSize="14"
+                               FontSize="16"
                                FontAttributes="Bold"
                                Grid.Column="1"
                                Grid.Row="0" />
 
                         <Label Text="{Binding Semester}"
                                TextColor="White"
-                               FontSize="16"
+                               FontSize="18"
                                Grid.Column="1"
                                Grid.Row="1" />
 
-                        <!-- ปุ่มถอนวิชา (ขนาดเล็กลง) -->
+                        <!-- ปุ่มถอนวิชา (อยู่ในแถวเดียวกัน) -->
                         <Button Text="❌ ถอน"
                                 BackgroundColor="Red"
                                 TextColor="White"
-                                FontSize="12"
-                                CornerRadius="10"
-                                Padding="4"
-                                WidthRequest="80"
+                                FontSize="14"
+                                CornerRadius="12"
+                                Padding="5"
+                                WidthRequest="100"
                                 Command="{Binding DropCourseCommand}"
                                 HorizontalOptions="End"
                                 Grid.Column="2"
@@ -89,9 +89,9 @@
                 <Label Text="รายละเอียดการลงทะเบียน"
                        HorizontalOptions="Center"
                        TextColor="White"
-                       FontSize="14"
+                       FontSize="16"
                        FontAttributes="Bold"
-                       Margin="8,8,8,8"/>
+                       Margin="8,10,8,8"/>
             </VerticalStackLayout>
         </Grid>
 
